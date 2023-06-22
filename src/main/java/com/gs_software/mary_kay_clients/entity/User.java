@@ -1,7 +1,5 @@
 package com.gs_software.mary_kay_clients.entity;
 
-<<<<<<< HEAD
-import com.gs_software.mary_kay_clients.entity.dto.UserDto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -20,17 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "users")
 public class User implements UserDetails {
-=======
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
 
-@Entity
-@Data
-@Table(name = "users")
-public class User {
->>>>>>> origin/main
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -40,7 +28,6 @@ public class User {
     private String email;
     @NotBlank
     private String password;
-<<<<<<< HEAD
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -71,6 +58,4 @@ public class User {
     public boolean isEnabled() {
         return true;
     }
-=======
->>>>>>> origin/main
 }

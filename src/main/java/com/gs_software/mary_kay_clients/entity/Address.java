@@ -18,20 +18,14 @@ public class Address {
     private String postalCode;
     private String country;
 
-    public Address(AddressDto addressDto){
+    public Address(AddressDto addressDto) {
         this.street = addressDto.street();
-<<<<<<< HEAD
         this.complement = addressDto.complement();
         this.neighborhood = addressDto.neighborhood();
         this.state = addressDto.state();
         this.postalCode = addressDto.postalCode();
         this.country = addressDto.country();
-=======
         this.number = addressDto.number();
-        this.street = addressDto.street();
-        this.street = addressDto.street();
-        this.street = addressDto.street();
->>>>>>> origin/main
     }
 }
 

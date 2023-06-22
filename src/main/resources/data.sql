@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 CREATE TABLE Client (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
@@ -35,34 +34,4 @@ VALUES ('John Doe', '1234567890', '1990-01-15', 'Main Street', '123', '', 'Downt
        ('Liam Martinez', '1112223333', '1997-04-10', 'Pine Street', '345', '', 'Hillsborough', 'Hillsville', 'Stateville', '23456', 'Countryland'),
        ('Amelia Anderson', '8889990000', '1991-09-23', 'Maple Avenue', '567', 'Apt 6C', 'Downtown', 'Cityville', 'Stateville', '76543', 'Countryland'),
        ('Henry Thompson', '3334445555', '1987-02-06', 'Walnut Drive', '654', '', 'Suburbia', 'Townsville', 'Stateville', '32109', 'Countryland');
-=======
-CREATE TABLE client (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(255),
-  phone_number VARCHAR(255)
 
-);
-
-INSERT INTO client (name, phone)
-VALUES
-  ('John Doe', '1234567890'),
-  ('Jane Smith', '9876543210'),
-  ('Michael Johnson', '5551234567'),
-  ('Emily Davis', '7890123456'),
-  ('Robert Wilson', '2345678901'),
-  ('Samantha Thompson', '6789012345'),
-  ('David Anderson', '3214567890'),
-  ('Olivia Davis', '9012345678'),
-  ('William Taylor', '4567890123'),
-  ('Sophia Martin', '7654321098'),
-  ('Daniel Thomas', '2109876543'),
-  ('Ava Robinson', '5432109876'),
-  ('James Clark', '8765432109'),
-  ('Mia Rodriguez', '4321098765'),
-  ('Joseph Lee', '6543210987'),
-  ('Charlotte Garcia', '1098765432'),
-  ('John Brown', '3210987654'),
-  ('Abigail Hernandez', '5432109876'),
-  ('Matthew White', '8765432109'),
-  ('Harper Lopez', '9876543210');
->>>>>>> origin/main

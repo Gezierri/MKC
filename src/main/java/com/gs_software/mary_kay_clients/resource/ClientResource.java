@@ -5,10 +5,7 @@ import com.gs_software.mary_kay_clients.entity.dto.ClientDto;
 import com.gs_software.mary_kay_clients.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-<<<<<<< HEAD
-=======
 import org.springframework.data.domain.Pageable;
->>>>>>> origin/main
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -20,34 +17,15 @@ import java.net.URI;
 @RequiredArgsConstructor
 public class ClientResource {
 
-<<<<<<< HEAD
     private final ClientService clientService;
-=======
-    final ClientService clientService;
->>>>>>> origin/main
 
     @PostMapping
     public ResponseEntity<ClientDto> save(@RequestBody ClientDto clientDto) {
         Client client = new Client(clientDto);
-<<<<<<< HEAD
         clientService.save(client);
-=======
-
->>>>>>> origin/main
         URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}")
                 .buildAndExpand(client.getId()).toUri();
         return ResponseEntity.created(uri).build();
-    }
-
-<<<<<<< HEAD
-    @GetMapping("/page")
-    public ResponseEntity<Page<ClientDto>> findPage(
-            @RequestParam(value = "page", defaultValue = "0") Integer page,
-            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage
-    ) {
-        Page<Client> clients = clientService.listAll(page, linesPerPage);
-        Page<ClientDto> clientDtoPage = clients.map(ClientDto::new);
-        return ResponseEntity.ok().body(clientDtoPage);
     }
 
     @GetMapping
@@ -69,11 +47,16 @@ public class ClientResource {
         Client client = new Client(clientDto);
         return ResponseEntity.ok(client);
     }*/
-=======
-    @GetMapping
-    public ResponseEntity<Page<Client>> listAll(Pageable pageable){
-        Page<Client> clients = clientService.listAll(pageable);
-        return ResponseEntity.ok(clients);
+
+    @GetMapping("/page")
+    public ResponseEntity<Page<ClientDto>> listAll(
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "listPerPage", defaultValue = "40") Integer listPerPage,
+            @RequestParam(value = "direction", defaultValue = "ASC") String direction,
+            @RequestParam(value = "orderBy", defaultValue = "name") String orderBy
+    ) {
+        Page<Client> clients = clientService.listAll(page, listPerPage, direction, orderBy);
+        Page<ClientDto> clientDtos = clients.map(ClientDto::new);
+        return ResponseEntity.ok(clientDtos);
     }
->>>>>>> origin/main
 }
