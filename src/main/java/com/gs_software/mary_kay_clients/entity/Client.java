@@ -10,6 +10,7 @@ import org.springframework.format.annotation.NumberFormat;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "client")
 @Getter
 @Setter
 @NoArgsConstructor

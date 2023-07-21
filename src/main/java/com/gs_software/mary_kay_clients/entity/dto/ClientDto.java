@@ -2,6 +2,7 @@ package com.gs_software.mary_kay_clients.entity.dto;
 
 import com.gs_software.mary_kay_clients.entity.Address;
 import com.gs_software.mary_kay_clients.entity.Client;
+
 import java.time.LocalDate;
 
 public record ClientDto(

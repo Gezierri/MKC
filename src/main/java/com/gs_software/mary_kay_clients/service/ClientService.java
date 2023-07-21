@@ -9,8 +9,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-import java.util.NoSuchElementException;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,6 +21,7 @@ public class ClientService {
 
     private final ClientRepository clientRepository;
 
+    @Transactional
     public Client save(Client client) {
         return clientRepository.save(client);
     }
@@ -28,11 +31,6 @@ public class ClientService {
         return clientRepository.findAll(pageRequest);
     }
 
-    public Client findByName(String name) {
-        Optional<Client> client = clientRepository.findByName(name);
-        return client.orElseThrow(() -> new NoSuchElementException("Not object with name " + name));
-    }
-
     public Client findClientById(Long id) {
         Optional<Client> client = clientRepository.findById(id);
         return client.orElseThrow(() -> new ObjectNotFoundException(id, "Client id not found! "));
@@ -40,7 +38,16 @@ public class ClientService {
 
     public Client updateClient(Client client, Long id) {
         Client obj = findClientById(id);
-        BeanUtils.copyProperties(obj, client);
+        BeanUtils.copyProperties(client, obj, "id");
         return clientRepository.save(obj);
+    }
+
+    public List<Client> findByNameContaining(String name) {
+        return clientRepository.findByNameContaining(name);
+    }
+
+    public void delete(Long id) {
+        Client client = findClientById(id);
+        clientRepository.delete(client);
     }
 }
