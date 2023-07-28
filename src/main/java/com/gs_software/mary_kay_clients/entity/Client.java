@@ -13,9 +13,11 @@ import java.time.LocalDate;
 @Table(name = "client")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@ToString
 public class Client {
 
     @Id
@@ -26,6 +28,8 @@ public class Client {
     @NumberFormat(pattern = "###########")
     @Column(name = "phone_number")
     private String phoneNumber;
+    @Column(name = "email")
+    private String email;
     @Column(name = "date_birth")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate dateBirth;
@@ -38,5 +42,6 @@ public class Client {
         this.phoneNumber = clientDto.phone();
         this.dateBirth = clientDto.dateBirth();
         this.address = clientDto.address();
+        this.email = clientDto.email();
     }
 }

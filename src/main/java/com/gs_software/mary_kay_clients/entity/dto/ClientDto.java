@@ -9,11 +9,12 @@ public record ClientDto(
         Long id,
         String name,
         String phone,
+        String email,
         LocalDate dateBirth,
         Address address
 ) {
     public ClientDto(Client client) {
-        this(client.getId(), client.getName(), client.getPhoneNumber(), client.getDateBirth(), client.getAddress());
+        this(client.getId(), client.getName(), client.getPhoneNumber(), client.getEmail(), client.getDateBirth(), client.getAddress());
     }
 }
 

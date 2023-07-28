@@ -9,21 +9,21 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-public class MaryKayClientsApplication implements CommandLineRunner {
+public class MaryKayClientsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MaryKayClientsApplication.class, args);
 	}
 
-	@Autowired
+	/*@Autowired
 	private PasswordEncoder encoder;
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserRepository userRepository;*/
 
-	@Override
+	/*@Override
 	public void run(String... args) throws Exception {
-		User user = new User(null, "teste@email.com", encoder.encode("123"));
-		userRepository.save(user);
-	}
+		*//*User user = new User(null, "teste@email.com", encoder.encode("123"));
+		userRepository.save(user);*//*
+	}*/
 }

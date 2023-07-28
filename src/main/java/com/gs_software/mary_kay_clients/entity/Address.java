@@ -6,6 +6,7 @@ import lombok.*;
 
 @Embeddable
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Address {
