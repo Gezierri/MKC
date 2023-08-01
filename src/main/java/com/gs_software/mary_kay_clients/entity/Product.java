@@ -3,6 +3,7 @@ package com.gs_software.mary_kay_clients.entity;
 import com.gs_software.mary_kay_clients.entity.dto.ProductDto;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 
@@ -22,6 +23,7 @@ public class Product {
     private String description;
     private BigDecimal price;
     private Integer stock;
+    private String image;
 
     public Product(ProductDto productDto) {
         this.id = productDto.id();
@@ -29,5 +31,6 @@ public class Product {
         this.description = productDto.description();
         this.price = productDto.price();
         this.stock = productDto.stock();
+        this.image = productDto.image();
     }
 }

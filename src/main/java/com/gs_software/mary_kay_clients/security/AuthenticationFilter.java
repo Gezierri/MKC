@@ -56,5 +56,4 @@ public class AuthenticationFilter extends OncePerRequestFilter {
         String requestURI = request.getRequestURI();
         return requestURI.contains("/login");
     }*/
-
 }

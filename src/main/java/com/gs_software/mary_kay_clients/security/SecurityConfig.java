@@ -27,7 +27,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
                 .requestMatchers(toH2Console()).permitAll()
                 .requestMatchers("/clients/**").permitAll()
-                //.requestMatchers("/products/**").permitAll()
+                .requestMatchers("/products/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);

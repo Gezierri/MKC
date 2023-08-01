@@ -9,9 +9,10 @@ public record ProductDto(
         String name,
         String description,
         BigDecimal price,
-        Integer stock
+        Integer stock,
+        String image
 ) {
     public ProductDto(Product product) {
-        this(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getStock());
+        this(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getStock(), product.getImage());
     }
 }
